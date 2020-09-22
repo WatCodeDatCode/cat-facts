@@ -4,39 +4,51 @@ const showNewFact = document.getElementById("new-fact-button");
 const catPicture = document.getElementById("cat-picture");
 const showLoadingMessage = document.getElementById("loading-message");
 
-// Function for consuming cat picture API and setting new src URL
-const randomCatPicture = () => {
-  fetch("https://api.thecatapi.com/v1/images/search")
-    .then((response) => response.json())
-    .then((json) => {
-      const picture = json[0].url;
-      catPicture.setAttribute("src", picture);
-      showLoadingMessage.style = "display:none";
-    });
+// Function to fetch cat image API
+const fetchCatImage = () => {
+  return fetch("https://api.thecatapi.com/v1/images/search").then((response) =>
+    response.json()
+  );
+};
+
+// Function to fetch cat fact API
+const fetchCatFact = () => {
+  return fetch("https://catfact.ninja/fact").then((response) =>
+    response.json()
+  );
+};
+
+// Function to wait for both cat APIs to finish and pass values through the other functions
+const consumeCatApis = () => {
+  Promise.all([fetchCatImage(), fetchCatFact()]).then((values) => {
+    const catImageUrl = values[0][0].url;
+    const getCatFact = values[1].fact;
+
+    getRandomCatPicture(catImageUrl);
+    getRandomCatFact(getCatFact);
+    showLoadingMessage.style = "display:none";
+  });
+};
+
+// Function for adding new url from cat API to img src
+const getRandomCatPicture = (url) => {
+  catPicture.setAttribute("src", url);
 };
 
 // Function for displaying random cat fact from API
-const randomCatFact = () => {
-  fetch(`https://catfact.ninja/fact`)
-    .then((response) => response.json())
-    .then((json) => {
-      const randomFact = json.fact;
+const getRandomCatFact = (fact) => {
+  catFact.innerHTML = "";
 
-      catFact.innerHTML = "";
+  const element = document.createElement("p");
+  element.classList.add("m-6", "text-lg");
+  element.innerHTML = fact;
 
-      const element = document.createElement("p");
-      element.classList.add("m-6", "text-lg");
-      element.innerHTML = randomFact;
-
-      catFact.appendChild(element);
-    });
+  catFact.appendChild(element);
 };
 
-// When button clicked, recall functions for cat picture and cat fact
+// When button clicked, recall function for adding new cat pic and fact
 showNewFact.addEventListener("click", () => {
-  randomCatPicture();
-  randomCatFact();
+  consumeCatApis();
 });
 
-randomCatPicture();
-randomCatFact();
+consumeCatApis();
