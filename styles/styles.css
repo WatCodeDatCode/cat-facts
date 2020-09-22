@@ -1,0 +1,45 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #81AE9D;
+    color: #31393C;
+}
+
+h2 {
+    color: #5995ED;
+}
+
+div {
+    background-color: #F9EAE1;
+}
+
+button {
+    padding: 0.5em 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+button.fact {
+    font-size: 1.2em;
+    background-color: #E24E1B;
+    color: #F9EAE1;
+}
+
+button.picture {
+    font-size: 1.2em;
+    background-color: #26C485;
+    color: #F9EAE1;
+}
+
+button:hover {
+    background-color: #5995ED;
+    color: #F9EAE1;
+}
+
+img {
+    max-height: 80%;
+}
