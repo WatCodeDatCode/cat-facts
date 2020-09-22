@@ -11,21 +11,17 @@
     <title>Random cat fact!</title>
   </head>
   <body>
-    <div class="container main mt-8 mx-auto m-4 p-3 text-center">
-      <h2 class="text-6xl font-bold mx-auto">Your random cat fact</h2>
+    <div class="container main mt-8 mx-auto m-4 p-3 text-center main">
+      <h2 class="md:text-4xl lg:text-6xl font-bold mx-auto">
+        Your random cat fact
+      </h2>
       <div class="container mx-auto mt-5 mb-5 w-3/5">
-        <img
-          class="mx-auto"
-          max-width="800px"
-          max-height="900px"
-          id="cat-picture"
-        />
+        <p id="loading-message" class="font-bold text-4xl">Loading...</p>
+        <img id="cat-picture" class="mx-auto" />
       </div>
-      <div id="cat-fact" class="text-lg font-bold">
-        <!-- Enter a number of cat facts! -->
-      </div>
+      <div id="cat-fact" class="text-lg font-bold"></div>
       <div class="container flex-between">
-        <button id="new-fact" class="mx-auto mr-5 fact">Show me more</button>
+        <button id="new-fact-button" class="mx-auto mr-5 fact">Show me more</button>
       </div>
     </div>
 
