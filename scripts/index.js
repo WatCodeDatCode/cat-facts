@@ -20,6 +20,8 @@ const fetchCatFact = () => {
 
 // Function to wait for both cat APIs to finish and pass values through the other functions
 const consumeCatApis = () => {
+  showNewFact.innerHTML = "Playing fetch";
+  showNewFact.disabled = true;
   Promise.all([fetchCatImage(), fetchCatFact()]).then((values) => {
     const catImageUrl = values[0][0].url;
     const getCatFact = values[1].fact;
@@ -27,6 +29,8 @@ const consumeCatApis = () => {
     getRandomCatPicture(catImageUrl);
     getRandomCatFact(getCatFact);
     showLoadingMessage.style = "display:none";
+    showNewFact.innerHTML = "Show me another";
+    showNewFact.disabled = false;
   });
 };
 
