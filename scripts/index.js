@@ -31,6 +31,7 @@ const fetchCatFact = () => {
 
 // Function to wait for both cat APIs to finish and pass values through the other functions
 const consumeCatApis = () => {
+  catFact.innerHTML = "";
   catPictureContainer.innerHTML = `<p id="loading-message" class="font-bold text-4xl">Fetching...</p>`;
   disableButton();
   Promise.all([fetchCatImage(), fetchCatFact()]).then((values) => {
@@ -50,8 +51,6 @@ const getRandomCatPicture = (url) => {
 
 // Function for displaying random cat fact from API
 const getRandomCatFact = (fact) => {
-  catFact.innerHTML = "";
-
   const element = document.createElement("p");
   element.classList.add("m-6", "text-lg");
   element.innerHTML = fact;
