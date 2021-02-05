@@ -12,16 +12,15 @@
   </head>
   <body>
     <div class="container main mt-8 mx-auto m-4 p-3 text-center main">
-      <h2 class="text-4xl lg:text-6xl font-bold mx-auto">
-        Random cat fact
-      </h2>
-      <div class="container mx-auto mt-5 mb-5 w-3/5">
-        <p id="loading-message" class="font-bold text-4xl">Fetching...</p>
-        <img id="cat-picture" class="mx-auto" />
+      <h2 class="text-4xl lg:text-6xl font-bold mx-auto">Random cat fact</h2>
+      <div id="cat-picture-container" class="container mx-auto mt-5 mb-5 w-3/5">
+        <!-- Container filled with script -->
       </div>
       <div id="cat-fact" class="text-lg font-bold"></div>
       <div class="container flex-between">
-        <button id="new-fact-button" class="mx-auto mr-5 fact">Show me another</button>
+        <button id="new-fact-button" class="mx-auto mr-5 fact">
+          Show me another
+        </button>
       </div>
     </div>
 
