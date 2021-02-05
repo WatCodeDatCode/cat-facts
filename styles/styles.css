@@ -21,17 +21,8 @@ button {
     padding: 0.5em 2em;
     margin-bottom: 1em;
     font-weight: bold;
-}
-
-button.fact {
     font-size: 1.7em;
     background-color: #E24E1B;
-    color: #F9EAE1;
-}
-
-button.picture {
-    font-size: 1.2em;
-    background-color: #26C485;
     color: #F9EAE1;
 }
 
