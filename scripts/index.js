@@ -52,7 +52,7 @@ const getRandomCatPicture = (url) => {
 // Function for displaying random cat fact from API
 const getRandomCatFact = (fact) => {
   const element = document.createElement("p");
-  element.classList.add("m-6", "text-lg");
+  element.classList.add("m-6", "text-2xl");
   element.innerHTML = fact;
 
   catFact.appendChild(element);
