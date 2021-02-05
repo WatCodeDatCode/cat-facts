@@ -31,6 +31,15 @@ button:hover {
     color: #F9EAE1;
 }
 
+button:disabled {
+    background-color: #26C485;
+    color: #F9EAE1;
+}
+
+button[disabled]:hover {
+    cursor: wait;
+}
+
 img {
     max-height: 60vh;
 }
