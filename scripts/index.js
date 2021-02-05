@@ -1,8 +1,19 @@
 // IDs for sections
 const catFact = document.getElementById("cat-fact");
 const showNewFact = document.getElementById("new-fact-button");
-const catPicture = document.getElementById("cat-picture");
 const showLoadingMessage = document.getElementById("loading-message");
+const catPictureContainer = document.getElementById("cat-picture-container");
+
+// Functions for changing button
+const disableButton = () => {
+  showNewFact.innerHTML = "Playing fetch";
+  showNewFact.disabled = true;
+};
+
+const enableButton = () => {
+  showNewFact.innerHTML = "Show me another";
+  showNewFact.disabled = false;
+};
 
 // Function to fetch cat image API
 const fetchCatImage = () => {
@@ -20,23 +31,21 @@ const fetchCatFact = () => {
 
 // Function to wait for both cat APIs to finish and pass values through the other functions
 const consumeCatApis = () => {
-  showNewFact.innerHTML = "Playing fetch";
-  showNewFact.disabled = true;
+  catPictureContainer.innerHTML = `<p id="loading-message" class="font-bold text-4xl">Fetching...</p>`;
+  disableButton();
   Promise.all([fetchCatImage(), fetchCatFact()]).then((values) => {
     const catImageUrl = values[0][0].url;
     const getCatFact = values[1].fact;
 
     getRandomCatPicture(catImageUrl);
     getRandomCatFact(getCatFact);
-    showLoadingMessage.style = "display:none";
-    showNewFact.innerHTML = "Show me another";
-    showNewFact.disabled = false;
+    enableButton();
   });
 };
 
 // Function for adding new url from cat API to img src
 const getRandomCatPicture = (url) => {
-  catPicture.setAttribute("src", url);
+  catPictureContainer.innerHTML = `<img id="cat-picture" class="mx-auto h-full" src=${url} />`;
 };
 
 // Function for displaying random cat fact from API
