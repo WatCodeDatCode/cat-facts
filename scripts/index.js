@@ -62,7 +62,6 @@ const setCatContainers = (url, fact) =>
 // Function for displaying random cat fact from API
 const setRandomCatFact = (fact) => {
   const element = document.createElement("p");
-  element.classList.add("m-6", "text-2xl");
   element.innerHTML = fact;
 
   catFact.appendChild(element);
