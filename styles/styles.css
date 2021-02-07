@@ -40,6 +40,33 @@ img {
     max-height: 60vh;
 }
 
+.spin {
+    fill: #E24E1B;
+	-webkit-animation: spin 1s ease-in-out infinite reverse forwards;
+	        animation: spin 1s ease-in-out infinite reverse forwards;
+}
+
+@-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }  
+
 @media only screen and (max-width: 600px) {
     img {
       max-height: 40vh;
