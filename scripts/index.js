@@ -55,7 +55,7 @@ const setCatContainers = (url, fact) =>
           showLoadingMessage.classList.add("hidden");
           enableButton();
         }
-        img.classList.add("mx-auto", "h-full");
+        img.classList.add("mx-auto", "max-h-full");
         img.src = url;
     });
 
