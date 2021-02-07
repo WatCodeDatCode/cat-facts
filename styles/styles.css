@@ -43,3 +43,9 @@ button[disabled]:hover {
 img {
     max-height: 60vh;
 }
+
+@media only screen and (max-width: 600px) {
+    img {
+      max-height: 40vh;
+    }
+  }
