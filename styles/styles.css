@@ -1,74 +1,88 @@
 html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #81AE9D;
-    color: #31393C;
+  background-color: #81ae9d;
+  color: #31393c;
 }
 
 h2 {
-    color: #5995ED;
+  color: #5995ed;
 }
 
 div {
-    background-color: #F9EAE1;
+  background-color: #f9eae1;
 }
 
 button {
-    background-color: #E24E1B;
-    color: #F9EAE1;
+  background-color: #e24e1b;
+  color: #f9eae1;
 }
 
 button:hover {
-    background-color: #5995ED;
-    color: #F9EAE1;
+  background-color: #5995ed;
+  color: #f9eae1;
 }
 
 button:disabled {
-    background-color: #26C485;
-    color: #F9EAE1;
+  background-color: #26c485;
+  color: #f9eae1;
 }
 
 button[disabled]:hover {
-    cursor: wait;
+  cursor: wait;
 }
 
 img {
-    max-height: 60vh;
+  max-height: 60vh;
 }
 
 .spin {
-    fill: #E24E1B;
-	-webkit-animation: spin 1s ease-in-out infinite reverse forwards;
-	        animation: spin 1s ease-in-out infinite reverse forwards;
+  fill: #e24e1b;
+  -webkit-animation: spin 1s ease-in-out infinite reverse forwards;
+  -moz-animation: spin 1s ease-in-out infinite reverse forwards;
+  -ms-animation: spin 1s ease-in-out infinite reverse forwards;
+  -o-animation: spin 1s ease-in-out infinite reverse forwards;
+  animation: spin 1s ease-in-out infinite reverse forwards;
 }
 
 @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
+  0% {
+    -webkit-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
   }
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }  
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -ms-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 
 @media only screen and (max-width: 600px) {
-    img {
-      max-height: 40vh;
-    }
+  img {
+    max-height: 40vh;
   }
+}
