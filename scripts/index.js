@@ -30,7 +30,7 @@ const fetchCatFact = () => {
 };
 
 // Function to wait for both cat APIs to finish and pass values through the other functions
-const consumeCatApis =  () => {
+const consumeCatApis = () => {
   catFact.innerHTML = "";
   catPictureContainer.innerHTML = "";
   showLoadingMessage.classList.remove("hidden");
@@ -39,25 +39,23 @@ const consumeCatApis =  () => {
     const catImageUrl = values[0][0].url;
     const getCatFact = values[1].fact;
 
-    //TODO: Refactor to one function "setRandomCatContainers" taking both URLs
     setCatContainers(catImageUrl, getCatFact);
-    // setRandomCatFact(getCatFact);
   });
 };
 
 // Function for loading cat image
 const setCatContainers = (url, fact) =>
-    new Promise(() => {
-        const img = new Image();
-        img.onload = () => {
-          catPictureContainer.appendChild(img);
-          setRandomCatFact(fact)
-          showLoadingMessage.classList.add("hidden");
-          enableButton();
-        }
-        img.classList.add("mx-auto", "max-h-full");
-        img.src = url;
-    });
+  new Promise(() => {
+    const img = new Image();
+    img.onload = () => {
+      catPictureContainer.appendChild(img);
+      setRandomCatFact(fact);
+      showLoadingMessage.classList.add("hidden");
+      enableButton();
+    };
+    img.classList.add("mx-auto", "max-h-full");
+    img.src = url;
+  });
 
 // Function for displaying random cat fact from API
 const setRandomCatFact = (fact) => {
