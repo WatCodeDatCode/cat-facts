@@ -41,7 +41,6 @@ img {
 }
 
 .spin {
-  fill: #e24e1b;
   -webkit-animation: spin 1s ease-in-out infinite reverse forwards;
   -moz-animation: spin 1s ease-in-out infinite reverse forwards;
   -ms-animation: spin 1s ease-in-out infinite reverse forwards;
